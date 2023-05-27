@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      text-align: center;
+      padding-top: 100px;
+      background-color: #FFFFFF;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #hoverButton {
+      height: 50px;
+      width: fit-content;
+    }
+    .price {
+      align-items: center;
+    }
+    .header {
+    position: fixed;
+    top :0;
+    left:0;
+    width: 100%;
+    padding: 20px 10%;
+    background:rgb(27, 12, 237);
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+
+.navbar a{
+
+    font-size:  18px;
+    color : yellow;
+    text-decoration:  none;
+    font-weight: 500;
+    margin-left: 100px;
+
+    
+}
+.navbar {
+    margin-left: 250px;
+}
+
+#register {
+  margin-top: 100px;
+    margin-bottom: 100px;
+    padding-top: 100px;
+    border-bottom-width: 100px;
+    padding-bottom: 100px;
+}
+
+  </style>
+</head>
+<body style="margin-top: 0px;padding-top: 50px;">
+  <header class = "header">
+
+    <nav class="navbar">
+        <a href="home_page.html">Home</a>
+        <a href="about_page.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="python.html">Python</a>
+    </nav>
+</header>
+  <h1>Hover Alert</h1>
+  <button id="hoverButton">Hover over me for an alert</button>
+  <h1>Button Alerts</h1>
+
+  <button id="alertButton">Click me for an alert</button><br>
+
+  <h2>BMI calculator</h2>
+    <label for = "weight">Weight(kilos)</label>
+    <input id = "weight" type="numbers">
+
+    <label for = "height">Height(cm)</label>
+    <input id = "height" type="numbers">
+    <br>
+    <br>
+
+    <div>
+        <button onclick = 'calculate()'>Submit</button>
+        <button onclick = 'reload()'>Clear</button>
+    </div>
+    <p id = 'heading'></p>
+    <p id = 'output'></p>
+
+    <div id = "price">
+      <hr style="height: 5px;border-width:0;color:gray;background-color:gray";>
+      <br>
+      <img src="pictures/Comsoc_img.png" alt="Italian Trulli">
+      <br>
+      <button id="colorRed">Red</button>
+      <button id="colorGreen">Green</button>
+      <button id="colorBlue">Blue</button>
+      <h1 >Computer Society T-Shirt Order Form</h1>
+      <br>
+      <div>
+          <h4>Price List:</h4>
+          <p>Small : 200</p>
+          <p>Medium : 220</p>
+          <p>Large : 250</p>
+          <br>
+      </div>
+  
+      <div>
+          <p id = 'name'>Name of Customer :</p>
+          <p id = 'degree'>Degree Program :</p>
+          <br>
+      </div>
+  
+      <div >
+          <p id = 'small'>Order for small size : </p>
+          <p id = 'medium'>Order for medium size :</p>
+          <p id = 'large'>Order for large size :</p>
+          <p id = 'total'>Total price is </p>
+      </div>
+    </div>
+    <hr>
+
+
+  <script>
+    // Background Color Changer
+    var colorRed = document.getElementById("colorRed");
+    var colorGreen = document.getElementById("colorGreen");
+    var colorBlue = document.getElementById("colorBlue");
+
+
+    colorRed.addEventListener("click", function() {
+      
+      var myDiv = document.getElementById("price");
+      myDiv.style.backgroundColor = "#DA917C";
+
+    });
+
+    colorGreen.addEventListener("click", function() {
+      
+      var myDiv = document.getElementById("price");
+      myDiv.style.backgroundColor = "#95DA7C";
+    });
+
+    colorBlue.addEventListener("click", function() {
+      
+      var myDiv = document.getElementById("price");
+      myDiv.style.backgroundColor = "#9DB3FF";
+    });
+
+    // Button Alerts
+    var alertButton = document.getElementById("alertButton");
+
+    alertButton.addEventListener("click", function() {
+      alert("Button clicked!");
+    });
+
+    // Hover Alert
+    var hoverButton = document.getElementById("hoverButton");
+
+    hoverButton.addEventListener("mouseover", function() {
+      alert("Button hovered!");
+    });
+
+  function calculate() {
+        let weight = document.getElementById('weight').value
+        let height = document.getElementById('height').value
+    
+        let bmi = (weight/(height * height) * 10000)
+    
+        document.getElementById('heading').innerHTML = "Your BMI is:"
+        document.getElementById('output').innerHTML = bmi.toFixed(2)
+    }
+  function reload() {
+      window.location.reload()
+  }
+  </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+    <script>
+      var game = prompt('Try the T-SHIRT store below? Y/N').toLowerCase()
+if (game == 'y') {
+
+
+var stn_name = prompt('enter name');
+var stn_deg = prompt('enter your degree');
+var array = myFunction();
+
+var name_concat = document.getElementById('name').textContent;
+var newname = name_concat + stn_name
+
+
+var deg_concat = document.getElementById('degree').textContent;
+var newdeg = deg_concat + stn_deg
+
+
+
+function myFunction() {
+    let size_s = prompt('Enter qty for small : 200');
+    let size_m = prompt('Enter qty for medium : 220');
+    let size_l = prompt('Enter qty for large : 250');
+
+    let total = (size_s*200) + (size_m*220) + (size_l*250);
+
+    return [size_s,size_m,size_l,total];
+
+  }
+
+var small = document.getElementById('small').textContent;
+var newsmall = small + array[0];
+
+
+var medium = document.getElementById('medium').textContent;
+var newmedium = medium + array[1];
+
+var large = document.getElementById('large').textContent;
+var newlarge = large + array[2];
+
+var total = document.getElementById('total').textContent;
+var newtotal = total + array[3];
+
+
+$('#name').text(newname);
+$('#degree').text(newdeg);
+$('#small').text(newsmall);
+$('#medium').text(newmedium);
+$('#large').text(newlarge);
+$('#total').text(newtotal);
+}
+else {
+  
+}
+    </script>
+    <div id = "register">
+
+    <h2 id='stud_name'></h2>
+    <h2 id='stud_course'></h2>
+    <h2 id='stud_units'></h2>
+    <h2 id='stud_rate'></h2>
+    <h2 style ="font-size: larger;" id = 'info'>If you want to test this feature, click the "submit" to enter your information </h2>
+        
+
+    <script>
+        function myFunction() {
+            var stn_name = prompt('Enter your name');
+            var stn_course = prompt('enter your course').toLowerCase();
+            var stn_unit = prompt('No. of units');
+            
+            if (stn_course == 'bsit'){
+                var rate = 1000
+            }
+            else{
+                var rate = 1200
+            }
+            $('#register').css('background-color', 'aqua');
+            var amount = rate * stn_unit;
+
+            var new_list = [stn_name, stn_course, stn_unit, rate, amount];
+            $('#stud_name').text('Welcome ' + new_list[0] +"!")
+$('#stud_course').text('Your course is ' + new_list[1])
+$('#stud_units').text('You enrolled ' + new_list[2] + " units")
+$('#stud_rate').text(new_list[1]+" rate is "+new_list[3] + " per unit")
+$("#info").attr("hidden", true);
+        }
+
+        function
+        tester() {
+            let confirmAction = confirm("Are you sure to execute this action?");
+            if (confirmAction) {
+
+                $("#info").attr("hidden", true);
+                $("#register").css('background-color', 'yellow');
+
+                $('#stud_name').text('Thank you ' + new_list[0])
+                $('#stud_course').text('Total Tuition fee is ' + new_list[4])
+                $('#stud_units').text('Your control code is 32-C1. Please proceed to the cashier and present your control code')
+
+                $('#stud_rate').text("")
+                $('#info').text("")
+            } else {
+                alert("Enrollment Cancelled.");
+            }
+
+        }
+    </script>
+
+    <form onSubmit="if(!myFunction('Is the form filled out correctly?')){return false;}">
+        <input id='disable' type="submit" />
+    </form>
+
+    <button id="myButton">SEE RECIEPT</button>
+
+    <script>
+      // Add event listener to the button
+      document.getElementById("myButton").addEventListener("click", function() {
+        // JavaScript code to be executed when the button is clicked
+         tester();
+        // Your code goes here...
+      });
+      </script>
+      </div>
+</body>
+</html>

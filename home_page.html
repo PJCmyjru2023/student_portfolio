@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "home_page.css">
+    <title>Home</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+margin: 0;
+ padding : 0; 
+ box-sizing: border-box;
+ font-family: 'Poppins', sans-serif;  
+ color: rgb(253, 255, 255);
+}
+
+body {
+    background: rgb(32, 23, 163);
+
+}
+
+.header {
+    position: fixed;
+    top :0;
+    left:0;
+    width: 100%;
+    padding: 20px 10%;
+    background:rgb(244, 218, 17);
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+
+.navbar a{
+    font-size:  18px;
+    color : rgb(26, 6, 6);
+    text-decoration:  none;
+    font-weight: 500;
+    margin-left: 70px;
+    transition: 2s linear;
+    
+}
+
+.navbar a:hover {
+    color : rgba(9, 20, 75, 0.983);
+    transition: .3s linear;
+}
+
+
+.home {
+    height:  100vh;
+    display: flex;
+    align-items:  center;
+    padding : 0 10%;
+}
+
+.home-content {
+    max-width: 600px;
+    position: absolute;
+   
+}
+
+.home-content h1{
+    margin-top: 140px;
+    font-size :56px;
+    font-weight: 700;
+}
+
+.home-content h1{
+    font-size :56px;
+    font-weight: 700;
+    
+}
+
+.home-content h3{
+    font-size :30px;
+    font-weight: 700;
+    color: rgb(254, 254, 254);
+}
+
+.home-content p{
+    font-size :16px;
+    letter-spacing: normal;
+    word-spacing: 5px;
+    margin: 20px 0 40px;
+
+}
+
+.home-content .btn-box {
+    display : flex;
+    justify-content: space-between;
+    width: 345px;
+    height: 50px;
+    
+}
+
+.btn-box a {
+    display: inline-flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+    background : rgb(28, 23, 23);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    font-size:  19px;
+
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    z-index: 1;
+}
+.btn-box a:nth-child(2){
+    background: transparent;
+
+}
+.btn-box a:nth-child(1){
+    background: transparent;
+
+}
+
+.btn-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 0;
+    height:100%;
+    background: rgb(156, 149, 1);
+    z-index: -1;
+    transition: .5s;
+    
+}
+
+.btn-box a:hover::before{
+    width: 100%;
+    
+}
+
+.navbar a{
+    cursor: pointer;
+    border-radius: 50%;
+    animation: fade-in 5s ease-in-out forwards;
+  }
+  
+  .navbar a:hover{
+    background-color: rgb(21, 226, 233);
+    transform: scale(1);
+  }
+
+  #logo-img {
+    width: 50px; /* Adjust the size as per your image */
+    height: 50px;
+  }
+
+  #logo-img2 {
+    width: 300px; /* Adjust the size as per your image */
+    height: 300px;
+    position: relative;
+    bottom: 200px;
+    left: 900px;
+    margin: 0;
+    padding : 0; 
+    opacity: 0;
+    animation: fade-in 5s ease-in-out forwards; 
+  }
+
+@keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+
+</style>
+<body id = "changeback">
+    
+    <section class = "home">
+        <header class = "header">
+            <img id = "logo-img" onmouseover="changeImage()" onmouseout="restoreImage()" src="pictures/jru_logo.png" alt="angry"/>
+    
+            <nav class="navbar">
+                <a href="home_page.html" onclick="slideLeft()">Home</a>
+                <a href="about_page.html">About</a>
+                <a href="works.html">Works</a>
+                <a href="python.html">Python</a>
+            </nav>
+        </header>
+        <div class = "home-content">
+            <h1>Welcome</h1>
+            <h3>To my website</h3>
+            <p>Hi, welcome to my page. Im Pedro Jesus Caponpon and im currently taking up Information Technology major in Business Analytics at Jose Rizal Univerity. 
+                In here you will find all my works throughout my stay with the school.
+                You can learn more about me in the About page. Or you can look at my submissions as it relates to programming and web design.
+                You can also look visit the "Python" page which includes my personal works on my spare time. Hope you have a good day!</p>
+            <div class = "btn-box">
+                <a href="#" onmouseover="changeImage()"> Hover here</a>
+                <a href="#" onmouseover="restoreImage()">And here</a>
+            </div>
+
+            <img id = "logo-img2" src="pictures/jru_logo.png" alt="angry"/>
+
+    </section>
+    </div>
+    <script>
+function changeImage() {
+  var image = document.getElementById("logo-img2");
+  image.src = "pictures/sanbeda_logo.png";  // Change the source to the new image
+  var image = document.getElementById("logo-img");
+  image.src = "pictures/sanbeda_logo.png";  // Change the source to the new image
+  var head = document.getElementById("changeback");
+  head.background = "white";  // Change the source to the new image
+}
+
+
+function restoreImage() {
+  var image = document.getElementById("logo-img2");
+  image.src = "pictures/jru_logo.png";  // Change the source back to the original image
+  var image = document.getElementById("logo-img");
+  image.src = "pictures/jru_logo.png";  // Change the source to the new image
+}
+
+    </script>
+</body>
+</html>

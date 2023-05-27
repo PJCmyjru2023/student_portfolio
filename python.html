@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper {
+        column-count: 2;
+        margin: 20%;
+        column-gap: 0%;
+        justify-content: flex-end;
+  
+ 
+}
+
+p {
+  line-height: 1.6; 
+  font-family: Helvetica;
+  text-align: justify;
+  padding: 15%;
+  font-size: 14px;
+  width: 400px;
+}
+.header {
+    position: fixed;
+    top :0;
+    left:0;
+    width: 100%;
+    padding: 20px 10%;
+    background:rgb(27, 12, 237);
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+
+.navbar a{
+
+    font-size:  18px;
+    color : yellow;
+    text-decoration:  none;
+    font-weight: 500;
+    margin-left: 100px;
+
+    
+}
+.navbar {
+    margin-left: 250px;
+}
+
+
+body{
+    background-color: white;
+}
+
+
+
+</style>
+<body>
+    <header class = "header">
+
+        <nav class="navbar">
+            <a href="home_page.html">Home</a>
+            <a href="about_page.html">About</a>
+            <a href="works.html">Works</a>
+            <a href="python.html">Python</a>
+        </nav>
+    </header>
+    <div class="wrapper">
+  
+        <iframe src="https://replit.com/@KribiChu/PjPomodoro?embed=true" width="580" height="600"></iframe>
+        
+        <p style="margin: 35%;">This is a Pomodoro timer made out of the Tkinter python module.
+            It is one of my projects to get started in object-oriented programming.
+            The timer can easily adjusted as the work time and break times were made as contants at the very top and as inputs to the function calls </p>
+        
+        
+    </div>
+    <div class="wrapper">
+
+        
+        <p style="padding: 0%;">Pong is a game created using the Tkinter Python module. I needed multiple Python files to not clog a single notebook with codes. Python files can be imported alongside the variables and functions associated. And these imported functions can be used to initiate and operate Class defined objects. While loops was used to make the ball appear in every frame update, which was possible because of Screen tracer method. You can set the tracer to 0 to completely blank out the screen, and then used time module to control when and how fast you the screen to reappear to hte latest of movement of each object. </p>
+        <iframe src="https://replit.com/@KribiChu/Pong?embed=true" width="506" height="660"></iframe>
+        
+    </div>
+    <div class="wrapper">
+        <iframe src="https://replit.com/@KribiChu/Snake-Game?embed=true" width="450" height="590"></iframe>
+        <p>Snake game was my introduction to visual OOP. It functions almost identically to the Pong game. You can create separate files for every object making up the game: blocks of squares making up the snake, food that randomly appears each encounter with the snake, Scoreboard that updates each successful encounter, while all operating inside the MAIN.PY file.  The main important module that makes all of this possible is the turtle module. From the module specific constructors where used, the Screen constructor for the screen and the Turtle constructor for the blocks of squares that makes up the snake, as well as the scoreboard that prints the scores. </p>
+        
+        
+    </div>
+</body>
+</html>

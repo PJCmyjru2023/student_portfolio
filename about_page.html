@@ -1,0 +1,233 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Global Layout Set-up */
+* { 
+  box-sizing: border-box;
+}
+  
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: #220404;
+  background: #efefee;
+}
+
+
+a {
+  text-decoration: none;
+  color: #999;
+}
+a:hover {
+  color: #6633ff;
+}
+
+
+
+.main-nav {
+  width: 100%;
+  background: black;
+  min-height: 30px;
+  padding: 10px;
+  position: fixed;
+  text-align: center;
+}
+.nav {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+.nav a {
+  transition: all .5s;
+}
+.nav a:hover {
+  color: rgb(255, 255, 255)
+}
+
+
+header .profile-image {
+  margin-top: 50px;
+  width: 200px;
+  height: 250px;
+  border-radius: 50%;
+  border: 3px solid white;
+
+}
+
+.tag {
+  background-color: #efefef;
+  color: black;
+  padding: 10px;
+  border-radius: 5px;
+  display: table;
+  margin: 10px auto;
+} 
+
+.card {
+  margin: 30px;
+  padding: 20px 40px 40px;
+  max-width: 500px;
+  text-align: left;
+  background: #fff;
+  border-bottom: 4px solid #ccc;
+  border-radius: 6px;
+  transition: 3.5s;
+}
+.card:hover {
+  border-color: black;
+  padding: 5%;
+  border-radius: 100px;
+  transition: 2s;
+}
+
+ul.skills {
+  padding: 0;
+  text-align: center;
+}
+
+.skills li {
+  border-radius: 6px;
+  display: inline-block;
+  background: #131ef2;
+  color: white;
+  padding: 5px 10px;
+  margin: 2px;
+}
+
+footer {
+  width: 100%;
+  min-height: 30px;
+  padding: 20px 0 40px 20px;
+}
+
+footer .copyright {
+  top: -8px;
+  font-size: .75em;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline-block;
+}
+
+
+.clearfix {
+  clear: both;
+}
+
+/* Styles for larger screens */
+@media screen and (min-width: 720px) {
+  
+  .flex {
+      display: -ms-flexbox;      /* TWEENER - IE 10 */
+      display: flex; 
+      max-width: 1200px;
+      -ms-flex-pack: distribute;
+      justify-content: space-around;
+      margin: 0 auto;
+  }
+
+  .nav {
+    max-width: 1200px;
+    padding: 0 30px;
+  }
+
+
+  main {
+    padding-top: 20px;
+  }
+
+  main p {
+    line-height: 1.6em;
+  }
+
+  footer {
+    font-size: 1.3em;
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+
+}
+
+
+.navbar a{
+    font-size:  18px;
+    color : rgb(243, 243, 252);
+    text-decoration:  none;
+    font-weight: 500;
+    margin-left: 70px;
+    transition: .5s linear;
+    
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: #000000;
+    border-radius: 50px;
+    padding: 20px;
+    transition: .2s linear;
+    font-size: 25px;
+    font-weight: bolder;
+    z-index: 100;
+}
+
+
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Muli%7CRoboto:400,300,500,700,900" rel="stylesheet">
+</head>
+  <body>
+
+    <header style="background-color: #040422;">
+      <nav class="navbar" style="
+      margin-top: 30px;">
+                <a href="home_page.html" onclick="slideLeft()">Home</a>
+                <a href="about_page.html">About</a>
+                <a href="works.html">Works</a>
+                <a href="python.html">Python</a>
+            </nav>
+      <img src="pictures/pj.jpg" alt="John Doe" class="profile-image">
+    </header>
+
+    <main class="flex">
+      <div class="card">
+        <h2>Background</h2>
+        <p>Took up Legal Management at San Beda College (now SBU) and stopped. Returned to school to educate myself about computers and advancements in technology.</p>
+        <p>I have an appreciation for Art. I apologize if it occasionally comes up in my works.</p>
+      </div> 
+
+      <div class="card">
+        <h2>Aims</h2>
+        <p>Lean about Python programming and web development. Learn about statistics, Data Management, and analytics, to be able to present clear and consise summarization of data.</p>
+        <ul class="skills">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>MySQL</li>
+          <li>PHP</li>
+        </ul>
+        <p>I'd like to spent the summer of 2023 to work on and improve my web development skills.</p>
+      </div> 
+
+    </main>
+    <footer>
+    </footer>
+  </body>
+  </html>

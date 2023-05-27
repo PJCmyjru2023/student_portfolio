@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Animated Cards in Circle</title>
+  <style>
+    .container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      perspective: 1000px;
+    }
+
+    .card {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      animation-name: rotate;
+      animation-duration: 4s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes rotate {
+      from {
+        transform: rotateY(0);
+      }
+      to {
+        transform: rotateY(1turn);
+      }
+    }
+
+    .card:nth-child(1) {
+      top: 50%;
+      left: 0;
+      margin-top: -50px;
+      animation-delay: -1s;
+      
+    }
+
+    .card:nth-child(2) {
+      top: 0;
+      left: 50%;
+      margin-left: -50px;
+      animation-delay: -0.5s;
+    }
+
+    .card:nth-child(3) {
+      top: 50%;
+      right: 0;
+      margin-top: -50px;
+    }
+    
+    body {
+	display: grid;
+	place-content: center;
+	height: 100vh;
+}
+
+.loading {
+	text-align: center;
+	width: min-content;
+}
+
+.loading__text {
+	font-weight: 500;
+	font-size: 2rem;
+}
+
+.loading__bar {
+	position: relative;
+	height: 10px;
+	width: 20rem;
+	background-color: rgb(169, 169, 169);
+	border-radius: 1em;
+	overflow: hidden;
+}
+
+.loading__bar::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(90deg, #fff5, rgba(230, 230, 230, 0.891));
+	animation: loading-animation 4s;
+	border-radius: 1em;
+  }
+
+@keyframes loading-animation {
+  0% {
+    width: 0%;
+  }
+  25% {
+    width: 25%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 75%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card"><img src="pictures/jru_logo.png" width = "100%" alt="angry"></div> 
+    <div class="card"><img src="pictures/pj.jpg" width = "100%" alt="angry"></div>    
+    <div class="card"><img src="pictures/sanbeda_logo.png" width = "100%" alt="angry"></div>
+  </div>
+
+  <div class="loading">
+    <p class="loading__text">Loading...</p>
+    <div class="loading__bar"></div>
+  </div>
+  <script>
+    function redirect() {
+      window.location.href = "home_page.html"; 
+    }
+    var delay = 4000; 
+    setTimeout(redirect, delay);
+  </script>
+
+
+</body>
+</html>
